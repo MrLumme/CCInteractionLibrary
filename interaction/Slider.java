@@ -54,11 +54,11 @@ public class Slider extends Interactable implements Lockable, OverColorable {
 	public void internalDraw() {
 		if (isDrawn()) {
 			if (!locked && !disabled) {
-				getP().stroke(DrawingHelper.getPColor(getP(), line, getTransparency()));
+				getP().stroke(line);
 				getP().fill(back.getR(), back.getG(), back.getB(), (float) (back.getA() * getTransparency()));
 			} else {
-				getP().stroke(DrawingHelper.getPColor(getP(), darkLine, getTransparency()));
-				getP().fill(DrawingHelper.getPColor(getP(), darkBack, getTransparency()));
+				getP().stroke(darkLine);
+				getP().fill(darkBack);
 			}
 
 			getP().rect(getX(), getY(), getW(), getH());
@@ -89,12 +89,12 @@ public class Slider extends Interactable implements Lockable, OverColorable {
 			// Button
 			if (!locked && !disabled) {
 				if (isMouseOver()) {
-					getP().fill(DrawingHelper.getPColor(getP(), over, getTransparency()));
+					getP().fill(over);
 				} else {
-					getP().fill(DrawingHelper.getPColor(getP(), fore, getTransparency()));
+					getP().fill(fore);
 				}
 			} else {
-				getP().fill(DrawingHelper.getPColor(getP(), darkFore, getTransparency()));
+				getP().fill(darkFore);
 			}
 
 			if (vertical == false) {

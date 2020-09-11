@@ -81,15 +81,15 @@ public abstract class Button extends Interactable implements LockTextable, OverC
 	public void internalDraw() {
 		if (isDrawn()) {
 			if (!locked && !disabled) {
-				getP().stroke(DrawingHelper.getPColor(getP(), line, getTransparency()));
+				getP().stroke(line);
 				if (isMouseOver()) {
-					getP().fill(DrawingHelper.getPColor(getP(), over, getTransparency()));
+					getP().fill(over);
 				} else {
 					getP().fill(back.getR(), back.getG(), back.getB(), (float) (back.getA() * getTransparency()));
 				}
 			} else {
-				getP().stroke(DrawingHelper.getPColor(getP(), darkLine, getTransparency()));
-				getP().fill(DrawingHelper.getPColor(getP(), darkBack, getTransparency()));
+				getP().stroke(darkLine);
+				getP().fill(darkBack);
 			}
 
 			getP().rect(getX(), getY(), getW(), getH());
@@ -99,9 +99,9 @@ public abstract class Button extends Interactable implements LockTextable, OverC
 				getP().textSize(textSize);
 				getP().textAlign(PConstants.CENTER, PConstants.CENTER);
 				if (!locked && !disabled) {
-					getP().fill(DrawingHelper.getPColor(getP(), txtc, getTransparency()));
+					getP().fill(txtc);
 				} else {
-					getP().fill(DrawingHelper.getPColor(getP(), darkTxtc, getTransparency()));
+					getP().fill(darkTxtc);
 				}
 				getP().text(text, getX() + getW() / 2 + 2, getY() + getH() / 2 + 1);
 			}

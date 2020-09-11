@@ -123,11 +123,11 @@ public abstract class ScrollBox<T extends Listable> extends Interactable impleme
 		try {
 			if (isDrawn()) {
 				if (!locked && !disabled) {
-					getP().stroke(DrawingHelper.getPColor(getP(), line, getTransparency()));
+					getP().stroke(line);
 					getP().fill(back.getR(), back.getG(), back.getB(), (float) (back.getA() * getTransparency()));
 				} else {
-					getP().stroke(DrawingHelper.getPColor(getP(), darkLine, getTransparency()));
-					getP().fill(DrawingHelper.getPColor(getP(), darkBack, getTransparency()));
+					getP().stroke(darkLine);
+					getP().fill(darkBack);
 				}
 
 				getP().rect(getX(), getY(), getW(), getH());
@@ -142,25 +142,25 @@ public abstract class ScrollBox<T extends Listable> extends Interactable impleme
 				if (options.size() < amountShown) {
 					for (int i = 0; i < options.size(); i++) {
 						if (i == selected && !locked && !disabled) {
-							getP().fill(DrawingHelper.getPColor(getP(), over, getTransparency()));
+							getP().fill(over);
 							getP().rect(getX(), getY() + (hor * i), getW(), hor);
 						}
 
 						if (options.get(i) instanceof MarkedListable) {
 							if (((MarkedListable) options.get(i)).isMarked()) {
-								getP().fill(DrawingHelper.getPColor(getP(), mark, getTransparency()));
+								getP().fill(mark);
 							} else {
 								if (!locked && !disabled) {
-									getP().fill(DrawingHelper.getPColor(getP(), txtc, getTransparency()));
+									getP().fill(txtc);
 								} else {
-									getP().fill(DrawingHelper.getPColor(getP(), darkTxtc, getTransparency()));
+									getP().fill(darkTxtc);
 								}
 							}
 						} else {
 							if (!locked && !disabled) {
-								getP().fill(DrawingHelper.getPColor(getP(), txtc, getTransparency()));
+								getP().fill(txtc);
 							} else {
-								getP().fill(DrawingHelper.getPColor(getP(), darkTxtc, getTransparency()));
+								getP().fill(darkTxtc);
 							}
 						}
 
@@ -174,25 +174,25 @@ public abstract class ScrollBox<T extends Listable> extends Interactable impleme
 				} else {
 					for (int i = showIndex; (i - showIndex) < amountShown; i++) {
 						if (i == selected && !locked) {
-							getP().fill(DrawingHelper.getPColor(getP(), over, getTransparency()));
+							getP().fill(over);
 							getP().rect(getX(), getY() + (hor * (i - showIndex)), getW(), hor);
 						}
 
 						if (options.get(i) instanceof MarkedListable) {
 							if (((MarkedListable) options.get(i)).isMarked()) {
-								getP().fill(DrawingHelper.getPColor(getP(), mark, getTransparency()));
+								getP().fill(mark);
 							} else {
 								if (!locked && !disabled) {
-									getP().fill(DrawingHelper.getPColor(getP(), txtc, getTransparency()));
+									getP().fill(txtc);
 								} else {
-									getP().fill(DrawingHelper.getPColor(getP(), darkTxtc, getTransparency()));
+									getP().fill(darkTxtc);
 								}
 							}
 						} else {
 							if (!locked && !disabled) {
-								getP().fill(DrawingHelper.getPColor(getP(), txtc, getTransparency()));
+								getP().fill(txtc);
 							} else {
-								getP().fill(DrawingHelper.getPColor(getP(), darkTxtc, getTransparency()));
+								getP().fill(darkTxtc);
 							}
 						}
 

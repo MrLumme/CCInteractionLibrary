@@ -27,7 +27,7 @@ public class LoadingBar extends Interactable implements MultiOverColorable {
 
 	@Override
 	public void internalDraw() {
-		getP().fill(DrawingHelper.getPColor(getP(), back, getTransparency()));
+		getP().fill(back);
 		getP().noStroke();
 		getP().rect(getX(), getY(), getW(), getH());
 
@@ -48,12 +48,12 @@ public class LoadingBar extends Interactable implements MultiOverColorable {
 			full.setH((int) ExMath.map(progress, 0.0, 1.0, 0.0, getH()));
 			break;
 		}
-		getP().fill(DrawingHelper.getPColor(getP(), (over.length > 1 ? calcBarColor() : over[0]), getTransparency()));
+		getP().fill((over.length > 1 ? calcBarColor() : over[0]));
 		getP().rect(full.getX(), full.getY(), full.getW(), full.getH());
 
 		getP().noFill();
 		if (separators > 0) {
-			getP().stroke(DrawingHelper.getPColor(getP(), sep, getTransparency()));
+			getP().stroke(sep);
 			if (direction == Direction.DOWN || direction == Direction.UP) {
 				for (int i = 0; i < separators; i++) {
 					float l = (getH() / (separators + 1.0f)) * (i + 1.0f);
@@ -67,7 +67,7 @@ public class LoadingBar extends Interactable implements MultiOverColorable {
 			}
 		}
 
-		getP().stroke(DrawingHelper.getPColor(getP(), line, getTransparency()));
+		getP().stroke(line);
 		getP().rect(getX(), getY(), getW(), getH());
 	}
 

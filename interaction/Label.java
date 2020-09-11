@@ -57,7 +57,7 @@ public class Label extends Interactable implements Textable {
 			if (lineSpacing != -1) {
 				getP().textLeading(lineSpacing);
 			}
-			getP().fill(DrawingHelper.getPColor(getP(), txtc, getTransparency()));
+			getP().fill(txtc);
 			getP().text(text, getX(), getY());
 		}
 	}

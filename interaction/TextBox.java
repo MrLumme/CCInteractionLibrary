@@ -115,15 +115,15 @@ public class TextBox extends Interactable implements LockTextable, OverColorable
 	public void internalDraw() {
 		if (isDrawn()) {
 			if (!locked && !disabled) {
-				getP().stroke(DrawingHelper.getPColor(getP(), line, getTransparency()));
+				getP().stroke(line);
 				if (isMouseOver() && editable) {
-					getP().fill(DrawingHelper.getPColor(getP(), over, getTransparency()));
+					getP().fill(over);
 				} else {
 					getP().fill(back.getR(), back.getG(), back.getB(), (float) (back.getA() * getTransparency()));
 				}
 			} else {
-				getP().stroke(DrawingHelper.getPColor(getP(), darkLine, getTransparency()));
-				getP().fill(DrawingHelper.getPColor(getP(), darkBack, getTransparency()));
+				getP().stroke(darkLine);
+				getP().fill(darkBack);
 			}
 
 			getP().rect(getX(), getY(), getW(), getH());
@@ -134,9 +134,9 @@ public class TextBox extends Interactable implements LockTextable, OverColorable
 				getP().textLeading(lineSpacing);
 				getP().textAlign(horAlign, vertAlign);
 				if (!locked && !disabled) {
-					getP().fill(DrawingHelper.getPColor(getP(), txtc, getTransparency()));
+					getP().fill(txtc);
 				} else {
-					getP().fill(DrawingHelper.getPColor(getP(), darkTxtc, getTransparency()));
+					getP().fill(darkTxtc);
 				}
 
 				if (singleLine) {
